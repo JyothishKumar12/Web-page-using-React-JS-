@@ -1,24 +1,50 @@
 import logo from './logo.svg';
 import './App.css';
+import Cards from './Cards';
+import Smovies from './Sarray';
+
+
+
+// function cardsmap(cvar){
+
+//   return (
+//     <card
+//      imgsrc= {cvar.imgscr}
+//      title = {cvar.title}
+//      sname = {cvar.sname}
+//      link = {cvar.link}
+//     />
+//   )
+// }
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+        
+        
+        <h1 className='heading1'>List OF TOP 5 SERIES</h1>
+        {/* {Smovies.map(cardsmap)}
+    
+    
+    <Cards imgsrc={Smovies[0].imgsrc} 
+          title={Smovies[0].title} 
+          sname ={Smovies[0].sname} 
+          // link ={Smovies[0].link}  */}          
+
+    { Smovies.map((val)=>{
+    return (
+  
+  <Cards
+  key = {val.id} 
+  imgsrc={val.imgsrc} 
+  title={val.title} 
+  sname ={val.sname} 
+  link ={val.link}
+  />
+   )
+    })}
+  </div>
   );
 }
 
